@@ -26,9 +26,16 @@ CACHES = {
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-host
-EMAIL_HOST = "localhost"
+# EMAIL_HOST = "localhost"
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-port
-EMAIL_PORT = 1025
+# EMAIL_PORT = 1025
+
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+EMAIL_USE_SSL = True
+EMAIL_HOST = "smtp.163.com"
+EMAIL_PORT = 465
+DEFAULT_FROM_EMAIL = env("EMAIL_HOST_USER")
 
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
